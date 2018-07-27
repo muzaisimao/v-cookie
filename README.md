@@ -1,15 +1,11 @@
 
 ## v-cookie
 
----
-
 一个用于操作cookie的Vue插件,使用简单,无依赖
 
 如果使用中遇到问题请联系: muzaisimao@163.com
 
 ## 安装
-
----
 
 ```bash
 npm i v-cookie -S
@@ -17,22 +13,18 @@ npm i v-cookie -S
 
 ## 使用
 
----
-
 ```js
 import Vue from 'vue'
 
 // 导入插件
-import $cookie from 'v-cookie'
+import VCookie from 'v-cookie'
 
 // 使用插件
-Vue.use(VueCookie);
+Vue.use(VCookie);
 
 ```
 
 ## 示例
-
----
 
 ```js
 
@@ -48,8 +40,6 @@ this.$cookie.del('userID')
 ```
 
 ## 方法
-
----
 
 **1. 设置cookie**
 
@@ -90,5 +80,12 @@ this.$cookie.del('userID')
 
 ## 作者
 
----
+```json
 
+{
+    "Nickname" : "木仔四毛",
+    "Emial" : "muzaisimao@163.com",
+    "Github" : "https://github.com/muzaisimao"
+}
+
+```

@@ -1,8 +1,8 @@
 const $cookie = require('./src/cookie');
-const gtCookie = {
+const VCookie = {
     install(Vue){
         Vue.prototype.$cookie = $cookie
     }
 }
 
-export default gtCookie;
+export default VCookie;

@@ -1,10 +1,14 @@
 {
   "name": "v-cookie",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "一个用于操作cookie的Vue插件,使用简单,无依赖",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muzaisimao/v-cookie"
   },
   "keywords": [
     "cookie",
