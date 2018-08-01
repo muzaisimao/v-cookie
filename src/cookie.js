@@ -1,18 +1,22 @@
 let $cookie = {
     /**
      * 设置cookie
-     * @param {string} cname cookie名
+     * @param {string} cname  cookie名
      * @param {string} cvalue cookie值
-     * @param {number} ctime 过期时间(单位:小时)默认值1天
+     * @param {number} ctime  过期时间 (单位:小时)默认值1天
+     * @param {string} domain 域名 (默认为当前的域名)
+     * @param {string} path   路径 (默认为 /)
      */
-    set(cname, cvalue, ctime = 24) {
+    set(cname, cvalue, ctime = 24, domain = null, path = '/') {
         let data = `${cname}=${cvalue}`;
+        let cpath = `path=${path}`;
+        let cdomain = `domain=${domain}`;
 
         let time = new Date();
         time.setTime(time.getTime() + (ctime * 1000 * 60 * 60));
         let expires = `expires=${time.toGMTString()}`
 
-        let cookie = `${data};${expires}`
+        let cookie = `${data};${expires};${cpath};${domain == null ? '' : cdomain}`
         document.cookie = cookie;
     },
     /**

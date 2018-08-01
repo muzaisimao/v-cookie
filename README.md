@@ -37,6 +37,9 @@ let userID = this.$cookie.get('userID')
 // 删除一个cookie
 this.$cookie.del('userID')
 
+// 设置一个跨二级域名访问的cookie
+this.$cookie.set('user','jack',48,'.baidu.com','/')
+
 ```
 
 ## 方法
@@ -49,10 +52,12 @@ this.$cookie.del('userID')
  * @param {string} cname cookie名
  * @param {string} cvalue cookie值
  * @param {number} ctime 过期时间(单位:小时)默认值1天
+ * @param {string} domain 域名 (默认为当前的域名)
+ * @param {string} path   路径 (默认为 / )
  * 
  */
 
-  VCookie.set(cname,cvalue,ctime)
+  VCookie.set(cname,cvalue,ctime,domain,path)
 ```
 
 **2. 获取cookie**
