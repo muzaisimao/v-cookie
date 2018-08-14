@@ -24,11 +24,11 @@ Vue.use(VCookie);
 
 ```
 
-## 示例
+## 简单示例
 
 ```js
 
-// 设置一个失效为8个小时的cookie
+// 设置一个时效为8小时的cookie
 this.$cookie.set('userID','xxx123',8)
 
 // 获取一个cookie
@@ -37,8 +37,12 @@ let userID = this.$cookie.get('userID')
 // 删除一个cookie
 this.$cookie.del('userID')
 
-// 设置一个跨二级域名访问的cookie
+// 设置一个自定义域名的cookie 
+//设置cookie时加了域名和路径，删除时也要加上一模一样的，否则无法删除
 this.$cookie.set('user','jack',48,'.baidu.com','/')
+
+//删除这个域名
+this.$cookie.del('user','.baidu.com','/')
 
 ```
 
@@ -78,9 +82,13 @@ this.$cookie.set('user','jack',48,'.baidu.com','/')
     /**
      * del cookie
      * @param {string} cname 要删除的cookie名
+     * @param {string} domain 要删除cookie的域名
+     * @param {string} path 要删除cookie的路径
+     * 
+     * ! tips: 设置域名是如果没有传域名和路径，删除时可以不传。 设置时传了，删除时就要传一模一样的，否则无法删除
      */
 
-    VCookie.del(cname)
+    VCookie.del(cname,domain,path)
 ```
 
 ## 作者

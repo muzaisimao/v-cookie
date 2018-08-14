@@ -43,11 +43,17 @@ let $cookie = {
     /**
      * 删除cookie
      * @param {string} cname 要删除的cookie名
+     * @param {string} domain 要删除cookie的域名
+     * @param {string} path 要删除cookie的路径
+     * 
+     * ! tips: 设置域名是如果没有传域名和路径，删除时可以不传。 设置时传了，删除时就要传一模一样的，否则无法删除
      */
-    del(cname) {
+    del(cname, domain = null, path = '/') {
         let data = `${cname}=''`;
         let expires = 'expires=Thu, 18 Dec 1998 12:00:00 GM';
-        let cookie = `${data};${expires}`
+        let cpath = `path=${path}`;
+        let cdomain = `domain=${domain}`;
+        let cookie = `${data};${expires};${cpath};${domain == null ? '' : cdomain}`
         document.cookie = cookie;
     }
 
